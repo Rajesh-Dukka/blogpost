@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { useSelector, useDispatch } from "react-redux";
-import { ADD_POST_REQUEST_SUCCESS } from "../../redux/actions";
-import { Navigate } from "react-router-dom";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const dispatch = useDispatch();
+  
 
   const addingPost = async () => {
     try {
@@ -27,7 +23,7 @@ const CreatePost = () => {
       const response = await fetch(api, options);
 
       console.log(response.data);
-      dispatch({ type: ADD_POST_REQUEST_SUCCESS, payload: response.data });
+     
     } catch (err) {
       console.log(err);
     }
