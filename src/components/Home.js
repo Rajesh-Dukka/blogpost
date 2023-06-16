@@ -1,18 +1,13 @@
-import React from "react";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-
-
-const Home = ({togglePost}) => {
-  
+const Home = () => {
   return (
-    <div className="home-top-container">
-      <h1> Homepage</h1>
-      <div className="home-main-container">
-        <button onClick={togglePost}>Create Post</button>
-        
-      </div>
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',}}>
+        <h1>Home page</h1>
+        <Link to={`/post`} > Go To Posts </Link>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
